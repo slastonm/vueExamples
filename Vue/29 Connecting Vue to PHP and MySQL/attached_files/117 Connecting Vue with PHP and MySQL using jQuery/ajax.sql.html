@@ -1,0 +1,70 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: 2017-07-27 14:35:01
+-- 服务器版本： 5.7.14
+-- PHP Version: 5.6.25
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `ajax`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `car`
+--
+
+CREATE TABLE `car` (
+  `car_id` int(11) NOT NULL,
+  `brand` varchar(60) COLLATE utf8mb4_bin NOT NULL,
+  `model` varchar(99) COLLATE utf8mb4_bin NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- 转存表中的数据 `car`
+--
+
+INSERT INTO `car` (`car_id`, `brand`, `model`) VALUES
+(1, 'Toyota', 'Land Cruiser'),
+(2, 'Nissan', 'GT-R R-35'),
+(3, 'Lexus', 'LX 570'),
+(4, 'Mazda', 'MX-8'),
+(5, 'Honda', 'Civic Type-R'),
+(6, 'Infiniti', 'Q80'),
+(7, 'Acura', 'TLX'),
+(8, 'Nissan', 'Leaf');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `car`
+--
+ALTER TABLE `car`
+  ADD PRIMARY KEY (`car_id`);
+
+--
+-- 在导出的表使用AUTO_INCREMENT
+--
+
+--
+-- 使用表AUTO_INCREMENT `car`
+--
+ALTER TABLE `car`
+  MODIFY `car_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

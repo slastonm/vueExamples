@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>130 Some thoughts about the news reading and editing app</title>
+</head>
+<body>
+<div class="asset-container">
+    <div class="asset-container__padding article-view">
+        <div class="w3c-default">
+            <p>The program we just created can automatically retrieve info stored in database and display them in a list.</p>
+
+<p>We can also edit, create and delete those information as well.</p>
+
+<p>However, this program has lots of room for improvements.</p>
+
+<p>For example, the codes we use to create and update items are very similar.</p>
+
+<p>They both have two input boxes, one selection list and two radio buttons.</p>
+
+<p>They both save user-submitted data to a Vue data property.</p>
+
+<p>They both send a Vue data property to the backend file.  </p>
+
+<p>They also have the same data filtering mechanism.</p>
+
+<p>In terms of dealing with feedback from backend file, they do exactly the same thing: calling the retrieve all method to update DOM or displaying an error message.</p>
+
+<p>So can we just write the code once and reuse it?</p>
+
+<p>Yes, we can.</p>
+
+<p>A little hint for you: <strong><em>component</em></strong>.</p>
+
+<p>We create one component and use it for creating and editing purposes.</p>
+
+<p>Sending data into a component requires props.</p>
+
+<p>Using prop, we can decide whether a component is for creating new item or updating existent ones.</p>
+
+<p>Using Ajax, component methods can communicate directly with the backend file.</p>
+
+<p>When feedback from backend file has reached the component method, we can tell Vue instance using self-defined event and the emit method.</p>
+
+<p>If everything is fine, we tell Vue instance to call the retrieve all method. If something goes wrong, we tell the Vue instance to display an error message.</p>
+
+<p>New Vue methods and data properties may be required. </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

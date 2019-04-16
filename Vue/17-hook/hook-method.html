@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue Project</title>
+    <meta http-equiv='content-type' content='text/html;charset=utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<body>
+    <div id='app'>
+        <p>
+            {{msg}}
+        </p>
+        <a href="https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram">Diagram</a>
+    </div>
+    <script type='text/javascript'>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                msg:'text'
+            },
+            beforeCreate:function(){console.log('beforeCreate', this.$el)},
+            created:function(){console.log('created', this.$el)},
+            beforeMount:function(){console.log('beforeMount', this.$el)},
+            mounted:function(){console.log('mounted', this.$el)},
+            beforeUpdate:function(){console.log('beforeUpdate', this.$el)},
+            updated:function(){console.log('updated', this.$el)},
+            activated:function(){console.log('activated', this.$el)},
+            deactivated:function(){console.log('deactivated', this.$el)},
+            beforeDestroy:function(){console.log('beforeDestroy', this.$el)},
+            destroyed:function(){console.log('destroyed', this.$el)},            
+        })
+        // vm.msg = 'update'
+        // vm.$destroy()
+    </script>
+</body>
+
+</html>

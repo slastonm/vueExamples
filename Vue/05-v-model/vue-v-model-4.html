@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>VUE the v-model directive</title>
+		<meta http-equiv='content-type' content='text/html;charset=utf-8'>
+		<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+		<style>
+			h1,div,p,span{font-size:33px;font-family:helvetica;margin-top:10px;}
+			textarea{width:400px;height:240px;font-size:36px;}
+			span{color:red}
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<body>	
+		<div id='app'>
+			<div>
+				<input type="text" v-model="input_value">
+				<p>
+					input text <span>{{input_value}}</span>
+				</p>
+			</div>
+			<hr/>
+			<div>
+				<input type="text" v-model.lazy="input_value2">
+				<p>
+					input text <span>{{input_value2}}</span>
+				</p>
+			</div>
+			<hr/>
+			<div>
+				<textarea v-model="textarea_value"></textarea>
+				<p>
+					textarea text <span>{{textarea_value}}</span>
+				</p>
+			</div>
+			<hr/>
+			<div>
+				<span>Intel</span>
+				<input type="radio" value='Intel' v-model="radio_value">
+				<span>AMD</span>
+				<input type="radio" value='AMD' v-model="radio_value">
+
+				<p>
+					Radio select <span>{{radio_value}}</span>
+				</p>
+			</div>
+			<hr/>
+			<div>
+				<span>Intel</span>
+				<input type="checkbox" value='Intel' v-model="checkbox_value">
+				<span>AMD</span>
+				<input type="checkbox" value='AMD' v-model="checkbox_value">
+
+				<p>
+					checkbox select <span v-if="checkbox_value.length>0"  >{{checkbox_value}}{{checkbox_value.length}}</span>
+				</p>
+			</div>
+			<hr/>
+			<select v-model='message'>
+				<option v-for='element in list_info' v-bind:value='element.value'>{{element.text}}</option>
+			</select>
+			<hr/>
+			<p>You have selected: <span>{{message}}</span></p>
+			
+		</div>
+	<script type='text/javascript'>
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				input_value: '',
+				input_value2: 'lazy',
+				textarea_value:'fwefwef',
+				message:'default value set in DATA',
+				radio_value:'',
+				checkbox_value:[],
+				list_info:[
+					{value:'apple',text:'fruit 1',},
+					{value:'peach',text:'fruit 2',},
+					{value:'orange',text:'fruit 3',},
+					{value:'pear',text:'fruit 4',},
+					{value:'banana',text:'fruit 5',},
+				],
+			},
+		})
+	</script>	
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

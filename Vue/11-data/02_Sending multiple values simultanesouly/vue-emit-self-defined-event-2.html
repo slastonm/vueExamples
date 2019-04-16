@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vue Project</title>
+		<meta http-equiv='content-type' content='text/html;charset=utf-8'>
+		<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+		<style>
+			h1,h2,h3,h4,h5,h6,div,p,span{font-family:helvetica;padding:0;margin:0;}
+			input{width:150px;}
+			#app{border:2px solid red;padding:10px 5px;}
+			.comp_root{border:2px solid blue;padding:10px 5px}
+			p{color:white;background:red}
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<body>
+		<div id='app'>
+			<h1>ParentDIV</h1>
+			<comp v-on:relay='allocate'></comp><hr/>
+			<p>{{content1}}</p><hr/>
+			<p>{{content2}}</p><hr/>
+			<p>{{content3}}</p>
+		</div>
+		<template id='temp'>
+			<div class='comp_root'>
+				<h2>Component</h2>
+				<input v-model='message1'/><hr/>
+				<input v-model='message2'/><hr/>
+				<input v-model='message3'/><hr/>
+				<button v-on:click='send'>Send Data</button>
+			</div>
+		</template>
+	<script type='text/javascript'>
+		var vm = Vue.component('comp',{
+			template:'#temp',
+			data:function(){
+				return{
+					message1:'Stored in MSG 1',
+					message2:'Stored in MSG 2',
+					message3:'Stored in MSG 3',
+				}
+			},
+			props:[],
+			methods:{
+				send:function(){
+					this.$emit('relay',this.message1, this.message2, this.message3)
+				}
+			},
+		})
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				content1:"Controlled By Content 1",
+				content2:"Controlled By Content 2",
+				content3:"Controlled By Content 3",
+			},
+			methods:{
+				allocate:function(v1,v2,v3){
+					this.content1=v1
+					this.content2=v2
+					this.content3=v3
+
+				}
+			},
+		})
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>	
+	</body>
+</html>
