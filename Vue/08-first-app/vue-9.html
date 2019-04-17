@@ -13,6 +13,7 @@
 		<div id='app'>
 			<textarea v-bind:class='{warning:!remain}' v-model='message' v-on:input='check'></textarea>
 			<p>{{remain}}/{{limit}}</p><!-- remain: how many characters left. limit: maximum character number-->
+			
 		</div>
 	<script type='text/javascript'>
 		var vm = new Vue({
